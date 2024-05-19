@@ -1,0 +1,25 @@
+
+path: /kaggle/input/images/train-val/wb_localization_dataset
+train: images/train
+val: images/val 
+test: # test images (optional)
+
+nc: 1
+
+names:
+  0: .
+
+aug_opt:
+  hsv_h: 0.015  # Adjust color hue variation
+  hsv_s: 0.7  # Adjust color saturation variation
+  hsv_v: 0.4  # Adjust color value variation
+  flip: 0.5  # Random horizontal flip with 50% probability
+  rotate: 10  # Random rotation up to 10 degrees
+  scale: 0.1  # Random scale jittering with 10% variation
+  translate: 0.1  # Random translation jittering with 10% variation
+
+anchors:
+  - [10, 13, 16, 30, 33, 23]  # P3/8 (adjust for smaller inscriptions)
+  - [30, 61, 62, 45, 59, 119]  # P4/16
+  - [116, 90, 156, 198, 373, 326]
+
